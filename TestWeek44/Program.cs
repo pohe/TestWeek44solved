@@ -145,7 +145,8 @@ foreach (int item in listOfInt)
 {
     if (searchNumber == item)
     {
-        found = true; 
+        found = true;
+        break;
     }
 }
 if (found)
@@ -176,3 +177,33 @@ foreach (int item in listOfInt)
 Console.WriteLine($"Tallet {aNumber}  findes {countOfaNumber} gange i listOfInt");
 
 Console.WriteLine("\nSlut opgave 10");
+
+//TODO:Opgave 11
+// Lav et loop der finder det højeste tal i listOfInt
+
+
+//int highestNumber = int.MinValue;
+if (listOfInt.Count > 0)
+{
+    int highestNumber = listOfInt[0];
+    //foreach (int i10 in listOfInt)
+    //{
+    //    if (i10 > highestNumber)
+    //        highestNumber = i10;
+    //}
+
+    for (int i = 1; i < listOfInt.Count; i++)
+    {
+        if (listOfInt[i]> highestNumber)
+            highestNumber = listOfInt[i];
+    }
+
+    Console.WriteLine($"Highest number in listOfInt er {highestNumber}");
+
+}
+else
+    Console.WriteLine("Lister er tom");
+
+
+//TODO: Lav et loop der finder de to største tal i ListOfInt og udskriver resultatet
+// Hjemmeopgave til torsdag
