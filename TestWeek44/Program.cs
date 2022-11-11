@@ -1,4 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using System.Security.Cryptography;
+
 Console.WriteLine("Weektest 44!");
 
 Console.WriteLine("Opgave 1");
@@ -207,3 +209,52 @@ else
 
 //TODO: Lav et loop der finder de to største tal i ListOfInt og udskriver resultatet
 // Hjemmeopgave til torsdag
+int highest1;//indeholder højeste tal
+int highest2; //indeholder næst højeste
+if (listOfInt.Count > 0)
+{
+    if (listOfInt.Count == 1)
+        Console.WriteLine($"Højeste tal  {listOfInt[0]} der er {listOfInt.Count} tal i listen");
+    else if (listOfInt.Count == 2)
+    {
+        if (listOfInt[0] > listOfInt[1])
+            Console.WriteLine($"Højeste tal er {listOfInt[0]} og næst højest er {listOfInt[1]} der er {listOfInt.Count} tal i listen");
+        else
+            Console.WriteLine($"Højeste tal er {listOfInt[1]} og næst højest er {listOfInt[0]} der er {listOfInt.Count} tal i listen");
+    }
+    else
+    {
+        highest1 = listOfInt[0];
+        highest2 = listOfInt[1];
+        if ( highest1 < highest2)
+        {
+            //Byt om
+            int temp = highest1;
+            highest1 = highest2;
+            highest2 = temp; 
+        }
+        for (int i = 2; i < listOfInt.Count; i++)
+        {
+            if (listOfInt[i]> highest1)
+            {
+                highest2 = highest1;
+                highest1= listOfInt[i];
+            } else if (listOfInt[i]> highest2)
+            {
+                highest2= listOfInt[i];
+            }
+        }
+        Console.WriteLine($"Højeste tal er {highest1} og næst højest er {highest2} der er {listOfInt.Count} tal i listen");
+
+    }
+
+
+
+}
+
+
+
+
+
+//    Console.WriteLine($"Højeste tal er {highest1} og næst højest er {highest2} der er {listOfInt.Count} tal i listen");
+
